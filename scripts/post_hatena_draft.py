@@ -2,7 +2,7 @@
 """はてなブログに記事を「下書き」として投稿するスクリプト（AtomPub API）。
 
 必要な環境変数:
-  HATENA_ID       はてなID
+  HATENA_ID       はてなID（省略時: desuke41）
   HATENA_BLOG_ID  ブログのドメイン（省略時: desuke41.hatenablog.jp ＝オイル交換プロジェクト）
   HATENA_API_KEY  はてなブログの設定 > 詳細設定 > AtomPub の APIキー
 
@@ -68,7 +68,7 @@ def main():
         print(xml)
         return
 
-    hatena_id = os.environ["HATENA_ID"]
+    hatena_id = os.environ.get("HATENA_ID", "desuke41")
     blog_id = os.environ.get("HATENA_BLOG_ID", "desuke41.hatenablog.jp")
     api_key = os.environ["HATENA_API_KEY"]
     url = f"https://blog.hatena.ne.jp/{hatena_id}/{blog_id}/atom/entry"
