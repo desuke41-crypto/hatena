@@ -11,6 +11,7 @@
   python3 scripts/post_hatena_draft.py --dry-run articles/...   # 送信せずXMLを表示
   python3 scripts/post_hatena_draft.py --blog desuke41.hateblo.jp articles/...  # メインブログへ
   python3 scripts/post_hatena_draft.py --replace articles/...  # 同じタイトルの下書きを上書き
+  python3 scripts/post_hatena_draft.py --replace --match-title "旧タイトル" articles/...  # タイトル変更時
 
 記事ファイル冒頭の <!-- --> コメント内「タイトル案:」または「タイトル:」をタイトルに使い、
 コメント部分は本文から取り除く。
@@ -92,6 +93,7 @@ def main():
     ap.add_argument("--category", action="append", default=[])
     ap.add_argument("--blog", help="投稿先ブログのドメイン（HATENA_BLOG_ID より優先）")
     ap.add_argument("--replace", action="store_true", help="同じタイトルの下書きがあれば上書きする（公開済み記事は対象外）")
+    ap.add_argument("--match-title", help="--replace で探す下書きのタイトル（タイトルを変えるときに旧タイトルを指定）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -108,7 +110,7 @@ def main():
     auth = base64.b64encode(f"{hatena_id}:{api_key}".encode()).decode()
     method = "POST"
     if args.replace:
-        edit_url = find_draft(url, auth, title)
+        edit_url = find_draft(url, auth, args.match_title or title)
         if edit_url:
             url, method = edit_url, "PUT"
         else:
