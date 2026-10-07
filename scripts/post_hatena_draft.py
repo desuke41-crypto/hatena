@@ -9,6 +9,7 @@
 使い方:
   python3 scripts/post_hatena_draft.py articles/oil-change-project/xxx.md
   python3 scripts/post_hatena_draft.py --dry-run articles/...   # 送信せずXMLを表示
+  python3 scripts/post_hatena_draft.py --blog desuke41.hateblo.jp articles/...  # メインブログへ
 
 記事ファイル冒頭の <!-- --> コメント内「タイトル案:」または「タイトル:」をタイトルに使い、
 コメント部分は本文から取り除く。
@@ -59,6 +60,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("path")
     ap.add_argument("--category", action="append", default=[])
+    ap.add_argument("--blog", help="投稿先ブログのドメイン（HATENA_BLOG_ID より優先）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -69,7 +71,7 @@ def main():
         return
 
     hatena_id = os.environ.get("HATENA_ID", "desuke41")
-    blog_id = os.environ.get("HATENA_BLOG_ID", "desuke41.hatenablog.jp")
+    blog_id = args.blog or os.environ.get("HATENA_BLOG_ID", "desuke41.hatenablog.jp")
     api_key = os.environ["HATENA_API_KEY"]
     url = f"https://blog.hatena.ne.jp/{hatena_id}/{blog_id}/atom/entry"
     auth = base64.b64encode(f"{hatena_id}:{api_key}".encode()).decode()
