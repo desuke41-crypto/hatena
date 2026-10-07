@@ -10,6 +10,7 @@
   python3 scripts/post_hatena_draft.py articles/oil-change-project/xxx.md
   python3 scripts/post_hatena_draft.py --dry-run articles/...   # 送信せずXMLを表示
   python3 scripts/post_hatena_draft.py --blog desuke41.hateblo.jp articles/...  # メインブログへ
+  python3 scripts/post_hatena_draft.py --replace articles/...  # 同じタイトルの下書きを上書き
 
 記事ファイル冒頭の <!-- --> コメント内「タイトル案:」または「タイトル:」をタイトルに使い、
 コメント部分は本文から取り除く。
@@ -20,7 +21,7 @@ import os
 import re
 import sys
 import urllib.request
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape, unescape
 
 
 def parse_article(path):
@@ -56,11 +57,41 @@ def build_entry(title, body, categories):
     )
 
 
+def request(url, auth, method="GET", data=None):
+    req = urllib.request.Request(
+        url,
+        data=data,
+        method=method,
+        headers={"Authorization": f"Basic {auth}", "Content-Type": "application/xml"},
+    )
+    with urllib.request.urlopen(req) as res:
+        return res.status, res.read().decode("utf-8")
+
+
+def find_draft(collection_url, auth, title, max_pages=10):
+    """同じタイトルの下書きを探して、その編集用URLを返す（なければ None）。"""
+    url = collection_url
+    for _ in range(max_pages):
+        _, feed = request(url, auth)
+        for entry in re.findall(r"<entry\b[^>]*>(.*?)</entry>", feed, re.S):
+            t = re.search(r"<title>(.*?)</title>", entry, re.S)
+            draft = re.search(r"<app:draft>yes</app:draft>", entry)
+            edit = re.search(r'<link rel="edit" href="([^"]+)"', entry)
+            if t and draft and edit and unescape(t.group(1)) == title:
+                return edit.group(1)
+        nxt = re.search(r'<link rel="next" href="([^"]+)"', feed)
+        if not nxt:
+            return None
+        url = unescape(nxt.group(1))
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("path")
     ap.add_argument("--category", action="append", default=[])
     ap.add_argument("--blog", help="投稿先ブログのドメイン（HATENA_BLOG_ID より優先）")
+    ap.add_argument("--replace", action="store_true", help="同じタイトルの下書きがあれば上書きする（公開済み記事は対象外）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -75,18 +106,19 @@ def main():
     api_key = os.environ["HATENA_API_KEY"]
     url = f"https://blog.hatena.ne.jp/{hatena_id}/{blog_id}/atom/entry"
     auth = base64.b64encode(f"{hatena_id}:{api_key}".encode()).decode()
-    req = urllib.request.Request(
-        url,
-        data=xml.encode("utf-8"),
-        method="POST",
-        headers={"Authorization": f"Basic {auth}", "Content-Type": "application/xml"},
-    )
-    with urllib.request.urlopen(req) as res:
-        resp = res.read().decode("utf-8")
-    edit = re.search(r'<link rel="alternate" type="text/html" href="([^"]+)"', resp)
-    print(f"下書きを保存しました（HTTP {res.status}）: {title}")
-    if edit:
-        print(edit.group(1))
+    method = "POST"
+    if args.replace:
+        edit_url = find_draft(url, auth, title)
+        if edit_url:
+            url, method = edit_url, "PUT"
+        else:
+            print("同じタイトルの下書きが見つからないので、新しく下書きを作ります。")
+    status, resp = request(url, auth, method, xml.encode("utf-8"))
+    action = "上書き" if method == "PUT" else "保存"
+    print(f"下書きを{action}しました（HTTP {status}）: {title}")
+    alt = re.search(r'<link rel="alternate" type="text/html" href="([^"]+)"', resp)
+    if alt:
+        print(alt.group(1))
 
 
 if __name__ == "__main__":
