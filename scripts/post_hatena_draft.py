@@ -3,7 +3,7 @@
 
 必要な環境変数:
   HATENA_ID       はてなID
-  HATENA_BLOG_ID  ブログのドメイン（例: oil-change.hatenablog.com）
+  HATENA_BLOG_ID  ブログのドメイン（省略時: desuke41.hatenablog.jp ＝オイル交換プロジェクト）
   HATENA_API_KEY  はてなブログの設定 > 詳細設定 > AtomPub の APIキー
 
 使い方:
@@ -69,7 +69,7 @@ def main():
         return
 
     hatena_id = os.environ["HATENA_ID"]
-    blog_id = os.environ["HATENA_BLOG_ID"]
+    blog_id = os.environ.get("HATENA_BLOG_ID", "desuke41.hatenablog.jp")
     api_key = os.environ["HATENA_API_KEY"]
     url = f"https://blog.hatena.ne.jp/{hatena_id}/{blog_id}/atom/entry"
     auth = base64.b64encode(f"{hatena_id}:{api_key}".encode()).decode()
