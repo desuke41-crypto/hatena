@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b4a7a"/>
+      <stop offset="0.45" stop-color="#d9786a"/>
+      <stop offset="1" stop-color="#f6c27a"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e3cf"/>
+      <stop offset="1" stop-color="#e9d2b6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.32" cy="0.42" r="0.7">
+      <stop offset="0" stop-color="#ffcf8a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- room -->
+  <rect width="1200" height="630" fill="url(#wall)"/>
+  <rect y="500" width="1200" height="130" fill="#b98d64"/>
+  <rect y="500" width="1200" height="8" fill="#a37a54"/>
+
+  <!-- window -->
+  <rect x="120" y="70" width="380" height="300" rx="10" fill="#7a5a3e"/>
+  <rect x="135" y="85" width="350" height="270" fill="url(#sky)"/>
+  <circle cx="380" cy="300" r="42" fill="#ffd98e"/>
+  <path d="M135 330 Q200 300 270 320 T400 315 T485 325 L485 355 L135 355 Z" fill="#5b4a6b" opacity="0.8"/>
+  <rect x="306" y="85" width="8" height="270" fill="#7a5a3e"/>
+  <rect x="135" y="216" width="350" height="8" fill="#7a5a3e"/>
+  <rect x="100" y="368" width="420" height="16" rx="4" fill="#8a6847"/>
+
+  <!-- warm light on floor/wall -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- wall clock -->
+  <circle cx="900" cy="150" r="78" fill="#fffaf2" stroke="#6b4f39" stroke-width="10"/>
+  <g fill="#6b4f39">
+    <circle cx="900" cy="88" r="5"/><circle cx="962" cy="150" r="5"/>
+    <circle cx="900" cy="212" r="5"/><circle cx="838" cy="150" r="5"/>
+  </g>
+  <!-- about 5:40 -->
+  <line x1="900" y1="150" x2="922" y2="190" stroke="#3d2c20" stroke-width="9" stroke-linecap="round"/>
+  <line x1="900" y1="150" x2="852" y2="186" stroke="#3d2c20" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="900" cy="150" r="7" fill="#c9543f"/>
+
+  <!-- sofa -->
+  <rect x="560" y="330" width="560" height="120" rx="40" fill="#5e7f8f"/>
+  <rect x="540" y="400" width="600" height="95" rx="30" fill="#6f93a3"/>
+  <rect x="520" y="370" width="70" height="125" rx="30" fill="#55737f"/>
+  <rect x="1090" y="370" width="70" height="125" rx="30" fill="#55737f"/>
+  <rect x="575" y="490" width="20" height="22" fill="#4a3526"/>
+  <rect x="1105" y="490" width="20" height="22" fill="#4a3526"/>
+
+  <!-- napping person -->
+  <!-- pillow -->
+  <ellipse cx="640" cy="388" rx="58" ry="30" fill="#f4efe6"/>
+  <!-- body under blanket -->
+  <path d="M660 410 Q760 350 900 372 Q1010 388 1060 410 Q1080 430 1050 440 L680 440 Q650 432 660 410 Z" fill="#e8a24e"/>
+  <path d="M700 395 L1040 420" stroke="#d08c3c" stroke-width="5" opacity="0.6"/>
+  <path d="M760 378 L1050 430" stroke="#d08c3c" stroke-width="5" opacity="0.6"/>
+  <!-- head -->
+  <circle cx="640" cy="372" r="34" fill="#f2c9a5"/>
+  <path d="M606 368 Q612 330 650 336 Q676 342 672 366 Q650 350 626 360 Z" fill="#4b3a33"/>
+  <!-- closed eye -->
+  <path d="M640 378 Q648 384 656 378" stroke="#4b3a33" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- zzz -->
+  <g fill="#6b4f39" font-family="Georgia, serif" font-weight="bold">
+    <text x="690" y="320" font-size="34">z</text>
+    <text x="722" y="286" font-size="44">z</text>
+    <text x="764" y="244" font-size="56">Z</text>
+  </g>
+
+  <!-- side table with books & tea -->
+  <rect x="380" y="420" width="120" height="14" rx="4" fill="#7a5a3e"/>
+  <rect x="392" y="434" width="10" height="70" fill="#7a5a3e"/>
+  <rect x="478" y="434" width="10" height="70" fill="#7a5a3e"/>
+  <rect x="392" y="398" width="88" height="22" rx="3" fill="#c9543f"/>
+  <rect x="398" y="378" width="80" height="20" rx="3" fill="#3f6b5a"/>
+  <rect x="394" y="360" width="84" height="18" rx="3" fill="#e2b54a"/>
+  <!-- mug -->
+  <rect x="300" y="470" width="0" height="0"/>
+  <!-- open book on floor -->
+  <path d="M250 540 Q300 520 350 540 L350 560 Q300 542 250 560 Z" fill="#fffaf2" stroke="#b9a58c" stroke-width="2"/>
+  <path d="M350 540 Q400 520 450 540 L450 560 Q400 542 350 560 Z" fill="#fffaf2" stroke="#b9a58c" stroke-width="2"/>
+  <line x1="350" y1="540" x2="350" y2="560" stroke="#b9a58c" stroke-width="2"/>
+
+  <!-- 8h -> 6h note -->
+  <g transform="translate(70 470) rotate(-4)">
+    <rect width="150" height="96" rx="6" fill="#fff7d6" stroke="#e2c97a" stroke-width="2"/>
+    <text x="16" y="44" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#9a8a6a" >8h</text>
+    <line x1="14" y1="34" x2="56" y2="34" stroke="#c9543f" stroke-width="3"/>
+    <text x="70" y="44" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#9a8a6a">→</text>
+    <text x="16" y="82" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="bold" fill="#c9543f">6h?</text>
+  </g>
+</svg>
