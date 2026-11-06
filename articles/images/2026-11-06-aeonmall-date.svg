@@ -21,6 +21,13 @@
     <ellipse cx="930" cy="70" rx="80" ry="22"/><ellipse cx="990" cy="58" rx="50" ry="22"/>
   </g>
 
+  <!-- title banner -->
+  <g>
+    <rect x="300" y="28" width="600" height="112" rx="16" fill="#ffffff" opacity="0.93"/>
+    <text x="600" y="78" font-family="Noto Sans CJK JP, sans-serif" font-size="40" font-weight="bold" fill="#333333" text-anchor="middle">伊達市に大型モール誕生</text>
+    <text x="600" y="122" font-family="Noto Sans CJK JP, sans-serif" font-size="30" font-weight="bold" fill="#c43a6b" text-anchor="middle">11.20 PRE OPEN</text>
+  </g>
+
   <!-- distant mountains -->
   <path d="M0 300 L120 230 L230 280 L360 210 L500 270 L640 220 L780 275 L920 215 L1060 265 L1200 230 L1200 330 L0 330 Z" fill="#7d9bb3"/>
   <path d="M0 320 L150 280 L300 310 L470 270 L650 305 L820 268 L1000 300 L1200 275 L1200 340 L0 340 Z" fill="#8fae86"/>
