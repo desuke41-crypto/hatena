@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb6e6"/>
+      <stop offset="1" stop-color="#d9ecf7"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd0ea"/>
+      <stop offset="1" stop-color="#5f9ec4"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9c77a"/>
+      <stop offset="1" stop-color="#8bb062"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="190" cy="90" rx="70" ry="22"/><ellipse cx="240" cy="78" rx="50" ry="24"/>
+    <ellipse cx="930" cy="70" rx="80" ry="22"/><ellipse cx="990" cy="58" rx="50" ry="22"/>
+  </g>
+
+  <!-- distant mountains -->
+  <path d="M0 300 L120 230 L230 280 L360 210 L500 270 L640 220 L780 275 L920 215 L1060 265 L1200 230 L1200 330 L0 330 Z" fill="#7d9bb3"/>
+  <path d="M0 320 L150 280 L300 310 L470 270 L650 305 L820 268 L1000 300 L1200 275 L1200 340 L0 340 Z" fill="#8fae86"/>
+
+  <!-- ground -->
+  <rect y="330" width="1200" height="300" fill="url(#field)"/>
+
+  <!-- mall building -->
+  <rect x="230" y="230" width="740" height="140" fill="#f4f1ea"/>
+  <rect x="230" y="222" width="740" height="12" fill="#c43a6b"/>
+  <rect x="250" y="250" width="700" height="34" fill="url(#glass)"/>
+  <rect x="250" y="296" width="700" height="34" fill="url(#glass)"/>
+  <g stroke="#f4f1ea" stroke-width="4">
+    <line x1="320" y1="250" x2="320" y2="330"/><line x1="390" y1="250" x2="390" y2="330"/>
+    <line x1="460" y1="250" x2="460" y2="330"/><line x1="530" y1="250" x2="530" y2="330"/>
+    <line x1="670" y1="250" x2="670" y2="330"/><line x1="740" y1="250" x2="740" y2="330"/>
+    <line x1="810" y1="250" x2="810" y2="330"/><line x1="880" y1="250" x2="880" y2="330"/>
+  </g>
+  <!-- central entrance tower -->
+  <rect x="540" y="185" width="120" height="185" fill="#ffffff"/>
+  <rect x="540" y="178" width="120" height="12" fill="#c43a6b"/>
+  <rect x="560" y="205" width="80" height="40" rx="6" fill="#c43a6b"/>
+  <rect x="560" y="300" width="80" height="70" fill="url(#glass)"/>
+  <line x1="600" y1="300" x2="600" y2="370" stroke="#ffffff" stroke-width="3"/>
+  <!-- rooftop terrace trees -->
+  <g fill="#6f9e4f">
+    <circle cx="300" cy="216" r="12"/><circle cx="330" cy="214" r="10"/>
+    <circle cx="860" cy="216" r="12"/><circle cx="890" cy="214" r="10"/>
+  </g>
+  <!-- plaza flags -->
+  <g>
+    <line x1="420" y1="300" x2="420" y2="372" stroke="#888" stroke-width="3"/>
+    <rect x="422" y="302" width="24" height="40" fill="#f2b84b"/>
+    <line x1="780" y1="300" x2="780" y2="372" stroke="#888" stroke-width="3"/>
+    <rect x="782" y="302" width="24" height="40" fill="#f2b84b"/>
+  </g>
+  <!-- base / sidewalk -->
+  <rect x="210" y="368" width="780" height="10" fill="#d6d0c4"/>
+
+  <!-- parking lot -->
+  <rect x="160" y="378" width="880" height="70" fill="#9a9a9a"/>
+  <g stroke="#ffffff" stroke-width="2" opacity="0.8">
+    <line x1="200" y1="385" x2="200" y2="440"/><line x1="260" y1="385" x2="260" y2="440"/>
+    <line x1="320" y1="385" x2="320" y2="440"/><line x1="380" y1="385" x2="380" y2="440"/>
+    <line x1="440" y1="385" x2="440" y2="440"/><line x1="500" y1="385" x2="500" y2="440"/>
+    <line x1="700" y1="385" x2="700" y2="440"/><line x1="760" y1="385" x2="760" y2="440"/>
+    <line x1="820" y1="385" x2="820" y2="440"/><line x1="880" y1="385" x2="880" y2="440"/>
+    <line x1="940" y1="385" x2="940" y2="440"/><line x1="1000" y1="385" x2="1000" y2="440"/>
+  </g>
+  <g>
+    <rect x="212" y="400" width="36" height="22" rx="6" fill="#e05a4f"/>
+    <rect x="332" y="400" width="36" height="22" rx="6" fill="#ffffff"/>
+    <rect x="452" y="400" width="36" height="22" rx="6" fill="#3d6fb6"/>
+    <rect x="712" y="400" width="36" height="22" rx="6" fill="#4a4a4a"/>
+    <rect x="832" y="400" width="36" height="22" rx="6" fill="#f2c94c"/>
+    <rect x="952" y="400" width="36" height="22" rx="6" fill="#ffffff"/>
+  </g>
+
+  <!-- highway (elevated) -->
+  <rect x="0" y="480" width="1200" height="58" fill="#6b6b6b"/>
+  <rect x="0" y="476" width="1200" height="8" fill="#d8d8d8"/>
+  <rect x="0" y="536" width="1200" height="10" fill="#cfcfcf"/>
+  <g fill="#ffffff">
+    <rect x="30" y="506" width="60" height="5"/><rect x="170" y="506" width="60" height="5"/>
+    <rect x="310" y="506" width="60" height="5"/><rect x="450" y="506" width="60" height="5"/>
+    <rect x="590" y="506" width="60" height="5"/><rect x="730" y="506" width="60" height="5"/>
+    <rect x="870" y="506" width="60" height="5"/><rect x="1010" y="506" width="60" height="5"/>
+  </g>
+  <g fill="#bdbdbd">
+    <rect x="140" y="546" width="26" height="84"/><rect x="560" y="546" width="26" height="84"/>
+    <rect x="980" y="546" width="26" height="84"/>
+  </g>
+  <!-- cars on highway -->
+  <g>
+    <rect x="250" y="488" width="70" height="26" rx="8" fill="#3d6fb6"/>
+    <rect x="262" y="482" width="42" height="14" rx="5" fill="#9fd0ea"/>
+    <rect x="820" y="512" width="70" height="26" rx="8" fill="#e05a4f"/>
+    <rect x="832" y="506" width="42" height="14" rx="5" fill="#9fd0ea"/>
+  </g>
+  <!-- IC sign -->
+  <g>
+    <rect x="1060" y="400" width="8" height="80" fill="#777"/>
+    <rect x="1010" y="370" width="110" height="44" rx="6" fill="#2e7d4f"/>
+    <text x="1065" y="400" font-family="sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">IC →</text>
+  </g>
+  <!-- ground under highway -->
+  <rect x="0" y="546" width="1200" height="84" fill="#8bb062" opacity="0.6"/>
+</svg>
