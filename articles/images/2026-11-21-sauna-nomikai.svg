@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2b27a"/>
+      <stop offset="1" stop-color="#c98c4f"/>
+    </linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3a67"/>
+      <stop offset="1" stop-color="#4a5d8f"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3c4" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff3c4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- left: sauna room -->
+  <rect x="0" y="0" width="640" height="630" fill="url(#wood)"/>
+  <g stroke="#b47a40" stroke-width="3" opacity="0.6">
+    <line x1="0" y1="90" x2="640" y2="90"/><line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/><line x1="0" y1="360" x2="640" y2="360"/>
+  </g>
+  <!-- bench -->
+  <rect x="40" y="430" width="560" height="34" rx="6" fill="#a8683a"/>
+  <rect x="40" y="464" width="560" height="166" fill="#b8784a"/>
+  <g stroke="#94582c" stroke-width="3"><line x1="40" y1="520" x2="600" y2="520"/><line x1="40" y1="575" x2="600" y2="575"/></g>
+
+  <!-- stove + stones + steam -->
+  <rect x="470" y="300" width="120" height="130" rx="10" fill="#555"/>
+  <g fill="#7a7a7a"><circle cx="495" cy="300" r="16"/><circle cx="530" cy="294" r="18"/><circle cx="565" cy="300" r="16"/></g>
+  <!-- ladle -->
+  <path d="M600 250 L560 285" stroke="#7a4b23" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="555" cy="290" rx="14" ry="8" fill="#7a4b23"/>
+  <g fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.85">
+    <path d="M500 270 q-18 -30 0 -60 q18 -30 0 -60"/>
+    <path d="M535 265 q-18 -34 0 -68 q18 -34 0 -68"/>
+    <path d="M570 270 q-18 -30 0 -60 q18 -30 0 -60"/>
+  </g>
+
+  <!-- person 1 -->
+  <g>
+    <circle cx="170" cy="300" r="48" fill="#f2c9a0"/>
+    <path d="M122 290 q48 -60 96 0 q-48 -22 -96 0z" fill="#ffffff"/>
+    <path d="M150 305 q8 6 16 0 M180 305 q8 6 16 0" stroke="#5a3a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M158 325 q12 10 24 0" stroke="#5a3a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect x="118" y="348" width="104" height="90" rx="30" fill="#f2c9a0"/>
+    <rect x="112" y="405" width="116" height="44" rx="12" fill="#ffffff"/>
+    <g fill="#7ec8f0"><ellipse cx="128" cy="280" rx="5" ry="8"/><ellipse cx="214" cy="330" rx="5" ry="8"/></g>
+  </g>
+  <!-- person 2 -->
+  <g>
+    <circle cx="330" cy="300" r="48" fill="#eebd92"/>
+    <path d="M282 290 q48 -60 96 0 q-48 -22 -96 0z" fill="#ffffff"/>
+    <path d="M310 305 q8 6 16 0 M340 305 q8 6 16 0" stroke="#5a3a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="330" cy="328" rx="10" ry="8" fill="#8a4a2a"/>
+    <rect x="278" y="348" width="104" height="90" rx="30" fill="#eebd92"/>
+    <rect x="272" y="405" width="116" height="44" rx="12" fill="#ffffff"/>
+    <g fill="#7ec8f0"><ellipse cx="372" cy="282" rx="5" ry="8"/></g>
+  </g>
+  <!-- speech bubble -->
+  <g>
+    <rect x="200" y="150" width="190" height="70" rx="30" fill="#ffffff"/>
+    <path d="M260 218 L250 250 L285 218z" fill="#ffffff"/>
+    <text x="295" y="197" font-family="Noto Sans CJK JP, sans-serif" font-size="30" font-weight="bold" fill="#c0562a" text-anchor="middle">ととのう〜</text>
+  </g>
+  <!-- timer -->
+  <g>
+    <circle cx="80" cy="120" r="44" fill="#ffffff" stroke="#7a4b23" stroke-width="6"/>
+    <text x="80" y="132" font-family="Noto Sans CJK JP, sans-serif" font-size="30" font-weight="bold" fill="#7a4b23" text-anchor="middle">105分</text>
+  </g>
+
+  <!-- right: izakaya at night -->
+  <rect x="640" y="0" width="560" height="630" fill="url(#night)"/>
+  <circle cx="1110" cy="90" r="40" fill="#fff6d0"/>
+  <circle cx="1126" cy="80" r="36" fill="#2f3f6d"/>
+  <g fill="#ffffff" opacity="0.8"><circle cx="720" cy="60" r="3"/><circle cx="860" cy="40" r="2.5"/><circle cx="980" cy="110" r="3"/><circle cx="1040" cy="30" r="2"/></g>
+  <!-- lantern -->
+  <circle cx="760" cy="200" r="90" fill="url(#lamp)"/>
+  <rect x="725" y="150" width="70" height="100" rx="30" fill="#e2483d"/>
+  <rect x="738" y="140" width="44" height="12" fill="#333"/><rect x="738" y="248" width="44" height="12" fill="#333"/>
+  <text x="760" y="212" font-family="Noto Sans CJK JP, sans-serif" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">焼</text>
+
+  <!-- table -->
+  <rect x="640" y="440" width="560" height="190" fill="#6b4226"/>
+  <rect x="640" y="430" width="560" height="18" fill="#8a5a36"/>
+  <!-- yakitori plate -->
+  <ellipse cx="830" cy="470" rx="120" ry="28" fill="#f5f0e6"/>
+  <g>
+    <line x1="740" y1="470" x2="900" y2="452" stroke="#d9b98a" stroke-width="5"/>
+    <g fill="#9a5a2a"><circle cx="775" cy="465" r="16"/><circle cx="810" cy="461" r="16"/><circle cx="845" cy="457" r="16"/></g>
+    <line x1="750" y1="488" x2="910" y2="476" stroke="#d9b98a" stroke-width="5"/>
+    <g fill="#b06a33"><circle cx="785" cy="484" r="15"/><circle cx="818" cy="481" r="15"/><circle cx="851" cy="479" r="15"/></g>
+  </g>
+  <!-- highball glass -->
+  <g>
+    <rect x="990" y="320" width="80" height="140" rx="8" fill="#f6d77a" opacity="0.9"/>
+    <rect x="990" y="320" width="80" height="140" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+    <rect x="1002" y="360" width="26" height="26" rx="4" fill="#ffffff" opacity="0.7"/>
+    <rect x="1032" y="390" width="26" height="26" rx="4" fill="#ffffff" opacity="0.7"/>
+    <g fill="#ffffff"><circle cx="1015" cy="420" r="4"/><circle cx="1045" cy="345" r="3"/><circle cx="1030" cy="440" r="3"/></g>
+  </g>
+  <!-- water glass (chaser) -->
+  <g>
+    <rect x="1100" y="370" width="60" height="90" rx="8" fill="#bfe6f7" opacity="0.8"/>
+    <rect x="1100" y="370" width="60" height="90" rx="8" fill="none" stroke="#ffffff" stroke-width="4"/>
+  </g>
+
+  <!-- title banner -->
+  <g>
+    <rect x="250" y="510" width="700" height="100" rx="18" fill="#ffffff" opacity="0.95"/>
+    <text x="600" y="555" font-family="Noto Sans CJK JP, sans-serif" font-size="38" font-weight="bold" fill="#333333" text-anchor="middle">個室サウナ → 一次会で帰宅</text>
+    <text x="600" y="595" font-family="Noto Sans CJK JP, sans-serif" font-size="26" font-weight="bold" fill="#c0562a" text-anchor="middle">大人の飲み方、はじめました</text>
+  </g>
+</svg>
