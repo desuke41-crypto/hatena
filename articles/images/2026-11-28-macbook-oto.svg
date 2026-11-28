@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#eef3f8"/>
+  <circle cx="1040" cy="110" r="70" fill="#dbe7f3"/>
+  <circle cx="150" cy="540" r="90" fill="#dbe7f3"/>
+  <!-- laptop -->
+  <g transform="translate(330,170)">
+    <rect x="40" y="0" width="460" height="290" rx="22" fill="#5b6675"/>
+    <rect x="62" y="22" width="416" height="246" rx="8" fill="#cfe0f0"/>
+    <path d="M0 300 H540 L515 330 H25 Z" fill="#8a95a3"/>
+    <rect x="225" y="300" width="90" height="10" rx="5" fill="#6d7886"/>
+    <!-- speaker icon on screen -->
+    <g transform="translate(205,95)" fill="#3a6ea5">
+      <rect x="0" y="30" width="34" height="46" rx="4"/>
+      <path d="M34 30 L80 0 V106 L34 76 Z"/>
+    </g>
+  </g>
+  <!-- sound waves -->
+  <g fill="none" stroke="#3a6ea5" stroke-width="14" stroke-linecap="round">
+    <path d="M910 240 Q950 315 910 390"/>
+    <path d="M960 200 Q1020 315 960 430" opacity=".7"/>
+    <path d="M1010 160 Q1090 315 1010 470" opacity=".45"/>
+    <path d="M290 240 Q250 315 290 390"/>
+    <path d="M240 200 Q180 315 240 430" opacity=".7"/>
+    <path d="M190 160 Q110 315 190 470" opacity=".45"/>
+  </g>
+  <!-- musical notes -->
+  <g fill="#e08a3c">
+    <circle cx="1080" cy="560" r="16"/><rect x="1092" y="500" width="6" height="62"/>
+    <circle cx="110" cy="120" r="14"/><rect x="120" y="66" width="6" height="56"/>
+  </g>
+</svg>
